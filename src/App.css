@@ -1,0 +1,19 @@
+header {
+  position: absolute;
+  top:0;
+  z-index: 9;
+  width: 100%;
+  background: #ED4C67;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 10px;
+  color: #fff;
+  font-family: 'Kaushan Script', cursive;
+}
+
+#map {
+  height: 100%;
+}
