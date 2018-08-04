@@ -6,7 +6,7 @@ import CustomMarker from './CustomMarker';
 const Map = withScriptjs(withGoogleMap(props => (
     <GoogleMap
         defaultCenter={{ lat: 51.1078852, lng: 17.0385376 }}
-        defaultZoom={13}
+        defaultZoom={12}
     >
         {props.allLocations.map((location) => (
             <CustomMarker
