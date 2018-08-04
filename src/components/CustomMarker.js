@@ -26,7 +26,7 @@ class CustomMarker extends Component {
                 position={{ lat: this.props.location.lat, lng: this.props.location.lng }}
                 onClick={this.onClickMarker}
             >
-                {this.state.isOpen && <InfoWindow>
+                {this.props.location.name === this.props.currentMarker && <InfoWindow>
                     <div>Hi, I'm InfoWindow</div>
                 </InfoWindow>}
             </Marker>
