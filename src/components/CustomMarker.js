@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Marker, InfoWindow } from 'react-google-maps';
+import InfoAboutLocation from './InfoAboutLocation'
 
 class CustomMarker extends Component {
     state = {
@@ -27,7 +28,9 @@ class CustomMarker extends Component {
                 onClick={this.onClickMarker}
             >
                 {this.props.location.name === this.props.currentMarker && <InfoWindow onCloseClick={this.onClickMarker}>
-                    <div>Hi, I'm InfoWindow</div>
+                    <InfoAboutLocation
+                        location={this.props.location}
+                    />
                 </InfoWindow>}
             </Marker>
         );
