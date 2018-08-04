@@ -1,8 +1,5 @@
+/* GENERAL */
 header {
-  position: absolute;
-  top:0;
-  z-index: 9;
-  width: 100%;
   background: #ED4C67;
   text-align: center;
 }
@@ -14,6 +11,22 @@ h1 {
   font-family: 'Kaushan Script', cursive;
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* MAP */
 #map {
+  flex-basis: 70%;
   height: 100%;
+}
+
+/* SIDE BAR */
+#sidebar {
+  flex-basis: 30%;
+}
+
+.locations-list li {
+  cursor: pointer;
 }

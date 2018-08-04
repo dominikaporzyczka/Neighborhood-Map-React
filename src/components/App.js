@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Map from './Map'
 import '../App.css';
+import Search from './Search';
 
 class App extends Component {
   constructor(props) {
@@ -33,13 +34,23 @@ class App extends Component {
           lng: 16.969623400000046
         },
       ],
-      currentMarker: ''
+      currentMarker: '',
+      filteredLocations: []
     }
     this.setCurrentMarker = this.setCurrentMarker.bind(this)
+    this.setFilteredLocations = this.setFilteredLocations.bind(this)
+  }
+
+  componentDidMount() {
+    this.setState({ filteredLocations: this.state.allLocations })
   }
 
   setCurrentMarker(marker) {
     this.setState({ currentMarker: marker })
+  }
+
+  setFilteredLocations(filteredLocations) {
+    this.setState({ filteredLocations })
   }
 
   render() {
@@ -48,17 +59,27 @@ class App extends Component {
         <header>
           <h1>The best places in Wroclaw - {this.state.currentMarker}</h1>
         </header>
-        <article id="map">
-          <Map
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVeL1HVZDSt2LEVM51g1P3CoVXF90FH2Y"
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `100vh` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-            allLocations={this.state.allLocations}
-            currentMarker={this.state.currentMarker}
-            setCurrentMarker={this.setCurrentMarker}
-          />
-        </article>
+        <main>
+          <section id="sidebar">
+            <Search
+              allLocations={this.state.allLocations}
+              filteredLocations={this.state.filteredLocations}
+              setCurrentMarker={this.setCurrentMarker}
+              setFilteredLocations={this.setFilteredLocations}
+            />
+          </section>
+          <article id="map">
+            <Map
+              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVeL1HVZDSt2LEVM51g1P3CoVXF90FH2Y"
+              loadingElement={<div style={{ height: `100%` }} />}
+              containerElement={<div style={{ height: `100vh` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+              locations={this.state.filteredLocations}
+              currentMarker={this.state.currentMarker}
+              setCurrentMarker={this.setCurrentMarker}
+            />
+          </article>
+        </main>
       </div>
     );
   }
