@@ -55,9 +55,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div id="App">
         <header>
-          <h1>The best places in Wroclaw - {this.state.currentMarker}</h1>
+          <h1>The best places in Wroclaw</h1>
         </header>
         <main>
           <section id="sidebar">
@@ -68,17 +68,17 @@ class App extends Component {
               setFilteredLocations={this.setFilteredLocations}
             />
           </section>
-          <article id="map">
+          <section id="map">
             <Map
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVeL1HVZDSt2LEVM51g1P3CoVXF90FH2Y"
               loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `100vh` }} />}
+              containerElement={<div style={{ height: `100%` }} />}
               mapElement={<div style={{ height: `100%` }} />}
               locations={this.state.filteredLocations}
               currentMarker={this.state.currentMarker}
               setCurrentMarker={this.setCurrentMarker}
             />
-          </article>
+          </section>
         </main>
       </div>
     );

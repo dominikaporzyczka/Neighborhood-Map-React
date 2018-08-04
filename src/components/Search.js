@@ -30,13 +30,13 @@ class Search extends Component {
                 <form onSubmit={this.filterList}>
                     <input
                         type="text"
-                        placeholder="Search place"
+                        placeholder="Search"
                         value={this.state.query}
                         onChange={(event) => (
                             this.updateQuery(event.target.value)
                         )}
                     />
-                    <button type="submit">Filter</button>
+                    <button type="submit">OK</button>
                 </form>
                 <ul className="locations-list">
                     {this.props.filteredLocations.map((location) =>(
