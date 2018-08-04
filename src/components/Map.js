@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
 import '../App.css';
 import CustomMarker from './CustomMarker';
 
 const Map = withScriptjs(withGoogleMap(props => (
     <GoogleMap
-        defaultCenter={{ lat: 54.5260, lng: 15.2551 }}
-        defaultZoom={4}
+        defaultCenter={{ lat: 51.1078852, lng: 17.0385376 }}
+        defaultZoom={13}
     >
         {props.allLocations.map((location) => (
             <CustomMarker
