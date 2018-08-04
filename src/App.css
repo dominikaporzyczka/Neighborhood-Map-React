@@ -78,3 +78,19 @@ form button {
 .locations-list li:hover {
   background: #ED4C67;
 }
+
+/* INFOWINDOW */
+.infowindow {
+  max-width: 200px;
+}
+
+.infowindow-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 10px 0 5px 0;
+}
+
+.infowindow-type {
+  color: #777;
+  font-style: italic;
+}
