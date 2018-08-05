@@ -34,6 +34,21 @@ main {
   flex: 300px 0 0;
   background: #2f3640;
   color: #fff;
+  transition: all 0.5s;
+  margin-left: -300px;
+}
+
+#sidebar.active {
+  margin-left: 0px;
+}
+
+.hamburger-icon {
+  float: left;
+  margin: 5px 0 0 20px;
+  font-size: 3em;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
 }
 
 .locations-list,

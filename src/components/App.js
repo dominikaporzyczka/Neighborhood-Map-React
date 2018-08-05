@@ -35,14 +35,19 @@ class App extends Component {
         },
       ],
       currentMarker: '',
-      filteredLocations: []
+      filteredLocations: [],
+      showSideBar: true
     }
     this.setCurrentMarker = this.setCurrentMarker.bind(this)
     this.setFilteredLocations = this.setFilteredLocations.bind(this)
+    this.toggleSideBar = this.toggleSideBar.bind(this)
   }
 
   componentDidMount() {
     this.setState({ filteredLocations: this.state.allLocations })
+    if (window.innerWidth < 500) {
+      this.setState({ showSideBar: false })
+    }
   }
 
   setCurrentMarker(marker) {
@@ -53,14 +58,21 @@ class App extends Component {
     this.setState({ filteredLocations })
   }
 
+  toggleSideBar() {
+    this.setState({ showSideBar: !this.state.showSideBar })
+  }
+
   render() {
     return (
       <div id="App">
         <header>
+          <a className="hamburger-icon" onClick={this.toggleSideBar}>
+            &#9776;
+          </a>
           <h1>The best places in Wroclaw</h1>
         </header>
         <main>
-          <section id="sidebar">
+          <section id="sidebar" className={this.state.showSideBar ? 'active' : ''}>
             <Search
               allLocations={this.state.allLocations}
               filteredLocations={this.state.filteredLocations}
