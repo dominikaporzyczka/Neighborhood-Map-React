@@ -3,7 +3,7 @@ import * as PlacesAPI from '../PlacesAPI'
 
 class InfoAboutLocation extends Component {
     state = {
-        data: ''
+        data: '' //Additional data from foursquare.com
     }
 
     componentDidMount() {
