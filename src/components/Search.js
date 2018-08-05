@@ -40,7 +40,10 @@ class Search extends Component {
                 <ul className="locations-list">
                     {this.props.filteredLocations.map((location) => (
                         <li key={location.name}>
-                            <a onClick={() => { this.props.setCurrentMarker(location.name) }}>
+                            <a tabIndex="0" 
+                                onClick={() => { this.props.setCurrentMarker(location.name) }}
+                                onKeyPress={(e) => (e.key === 'Enter') ? this.props.setCurrentMarker(location.name) : 0}
+                            >
                                 {location.name}
                             </a>
                         </li>

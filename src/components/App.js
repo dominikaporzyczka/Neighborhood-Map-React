@@ -66,7 +66,7 @@ class App extends Component {
     return (
       <div id="App">
         <header>
-          <a className="hamburger-icon" onClick={this.toggleSideBar}>
+          <a className="hamburger-icon" aria-label="Toggle place list" onClick={this.toggleSideBar}>
             &#9776;
           </a>
           <h1>The best places in Wroclaw</h1>
@@ -80,7 +80,7 @@ class App extends Component {
               setFilteredLocations={this.setFilteredLocations}
             />
           </section>
-          <section id="map">
+          <section id="map" role="application">
             <Map
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVeL1HVZDSt2LEVM51g1P3CoVXF90FH2Y"
               loadingElement={<div style={{ height: `100%` }} />}
