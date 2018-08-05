@@ -16,7 +16,7 @@ class Search extends Component {
             const filteredList = this.props.allLocations.filter((location) => (
                 location.name.toLowerCase().includes(this.state.query)
             ))
-    
+
             this.props.setFilteredLocations(filteredList)
         }
 
@@ -24,7 +24,7 @@ class Search extends Component {
     }
 
     render() {
-        return(
+        return (
             <div>
                 <form onSubmit={this.filterList}>
                     <input
@@ -38,9 +38,9 @@ class Search extends Component {
                     <button type="submit">OK</button>
                 </form>
                 <ul className="locations-list">
-                    {this.props.filteredLocations.map((location) =>(
+                    {this.props.filteredLocations.map((location) => (
                         <li key={location.name}>
-                            <a onClick={() => this.props.setCurrentMarker(location.name)}>
+                            <a onClick={() => { this.props.setCurrentMarker(location.name) }}>
                                 {location.name}
                             </a>
                         </li>

@@ -25,7 +25,10 @@ class CustomMarker extends Component {
         return (
             <Marker
                 position={{ lat: this.props.location.lat, lng: this.props.location.lng }}
-                onClick={this.onClickMarker}
+                animation={
+                    this.props.location.name === this.props.currentMarker ? 1 : 0
+                }
+                onClick={this.onClickMarker}    
             >
                 {this.props.location.name === this.props.currentMarker && <InfoWindow onCloseClick={this.onClickMarker}>
                     <InfoAboutLocation
