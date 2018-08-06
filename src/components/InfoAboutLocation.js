@@ -23,6 +23,7 @@ class InfoAboutLocation extends Component {
                         <p className="infowindow-name">{data.name}</p>
                         <p className="infowindow-type">{data.categories[0].name}</p>
                         <p className="infowindow-address">{data.location.formattedAddress.join(', ')}</p>
+                        <p className="infowindow-source-of-data">Source of information: <a href="https://foursquare.com/">Foursquare</a></p>
                     </div>
                 }
             </div>

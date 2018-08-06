@@ -105,7 +105,17 @@ form button {
   margin: 10px 0 5px 0;
 }
 
-.infowindow-type {
+.infowindow-type,
+.infowindow-source-of-data,
+.infowindow-source-of-data a {
   color: #777;
+}
+
+.infowindow-type {
   font-style: italic;
+}
+
+.infowindow-source-of-data a {
+  text-decoration: none;
+  border-bottom: 1px solid #777;
 }
