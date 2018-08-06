@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      allLocations: MarkersData.data,
+      markers: MarkersData.data,
       currentMarker: '',
       filteredLocations: [],
       showSideBar: true
@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ filteredLocations: this.state.allLocations })
+    this.setState({ filteredLocations: this.state.markers })
     if (window.innerWidth < 500) {
       this.setState({ showSideBar: false })
     }
@@ -49,7 +49,7 @@ class App extends Component {
         <main>
           <section id="sidebar" className={this.state.showSideBar ? 'active' : ''}>
             <Search
-              allLocations={this.state.allLocations}
+              markers={this.state.markers}
               filteredLocations={this.state.filteredLocations}
               setCurrentMarker={this.setCurrentMarker}
               setFilteredLocations={this.setFilteredLocations}

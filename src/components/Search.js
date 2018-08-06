@@ -11,9 +11,9 @@ class Search extends Component {
 
     filterList = (e) => {
         if (!this.state.query) {
-            this.props.setFilteredLocations(this.props.allLocations)
+            this.props.setFilteredLocations(this.props.markers)
         } else {
-            const filteredList = this.props.allLocations.filter((location) => (
+            const filteredList = this.props.markers.filter((location) => (
                 location.name.toLowerCase().includes(this.state.query)
             ))
 
