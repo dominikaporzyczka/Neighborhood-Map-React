@@ -8,5 +8,5 @@ export const getMarkerInfo = (marker) => {
     return fetch(url)
         .then(response => response.json())
         .then(data => data.response.venues[0])
-        .catch(error => console.error(error))
+        .catch(error => alert('Oops, sorry! Data download failed :('))
 }

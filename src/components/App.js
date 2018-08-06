@@ -23,6 +23,10 @@ class App extends Component {
     if (window.innerWidth < 500) {
       this.setState({ showSideBar: false })
     }
+
+    window.gm_authFailure = () => {
+      alert("Google Map authorization error. Please try refreshing the page.")
+    }
   }
 
   setCurrentMarker(marker) {
