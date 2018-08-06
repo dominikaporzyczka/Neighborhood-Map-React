@@ -26,9 +26,10 @@ class Search extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.filterList}>
+                <form onSubmit={this.filterList} role="search">
                     <input
                         type="text"
+                        aria-label="search place"
                         placeholder="Search"
                         value={this.state.query}
                         onChange={(event) => (
@@ -40,7 +41,8 @@ class Search extends Component {
                 <ul className="locations-list">
                     {this.props.filteredLocations.map((location) => (
                         <li key={location.name}>
-                            <a tabIndex="0" 
+                            <a tabIndex="0"
+                                role="button" 
                                 onClick={() => { this.props.setCurrentMarker(location.name) }}
                                 onKeyPress={(e) => (e.key === 'Enter') ? this.props.setCurrentMarker(location.name) : 0}
                             >
